@@ -830,7 +830,7 @@ This app contains the rudiments of an ecommerce app.
                     textDecoration: "none",
                     color: `${onAccount ? styleColors.maroon : "black"}`,
                   }}
-                  to="/"
+                  to="/account"
                 >
                   Account
                 </Link>
