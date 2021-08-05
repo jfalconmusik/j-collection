@@ -1,0 +1,7 @@
+{
+    "tableName": "Domestics",
+    "partitionKeyName": "UserID",
+    "partitionKeyType": "N",
+    "sortKeyName": "ZipCode",
+    "sortKeyType": "N"
+}

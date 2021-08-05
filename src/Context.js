@@ -222,7 +222,6 @@ function ContextProvider({ children }) {
 
   const [onAccount, setOnAccount] = useState(false);
 
-
   const styleColors = {
     peachPuff: "#F9DBBD",
     lightPink: "#FFA5AB",
