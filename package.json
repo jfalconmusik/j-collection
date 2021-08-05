@@ -9,6 +9,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "amplify": "^0.0.11",
+    "aws-amplify": "^4.2.2",
+    "aws-amplify-react": "^5.0.8",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "flexbox-react": "^4.4.0",

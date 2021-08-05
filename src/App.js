@@ -5,6 +5,14 @@ import Flexbox from "react-flexbox";
 import { Elements, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { Link, Switch, Route, useHistory, useLocation } from "react-router-dom";
+import Amplify, {
+  Analytics,
+  Storage,
+  API,
+  graphqlOperation,
+} from "aws-amplify";
+import { withAuthenticator, S3Album } from "aws-amplify-react";
+import aws_exports from "./aws-exports";
 import About from "./components/About.jsx";
 import Header from "./components/Header.jsx";
 import Contact from "./components/Contact.jsx";
@@ -21,7 +29,71 @@ import Sidebar from "react-sidebar";
 import OrderSuccess from "./components/OrderSuccess.jsx";
 import Billing from "./components/Billing.jsx";
 
+Amplify.configure(aws_exports);
+Storage.configure({ level: "private" });
+
+// for graphQL
+// https://bvr7xryc2rf2bpeiuvbtknemya.appsync-api.us-east-1.amazonaws.com/graphql
+const listTodos = `query listTodos {
+  listTodos{
+    items{
+      id
+      name
+      description
+    }
+  }
+}`;
+
+const addTodo = `mutation createTodo($name:String! $description: String!) {
+  createTodo(input:{
+    name:$name
+    description:$description
+  }){
+    id
+    name
+    description
+  }
+}`;
+
 function App() {
+  // for graphQL
+  const todoMutation = async () => {
+    const todoDetails = {
+      name: "Party tonight!",
+      description: "Amplify CLI rocks!",
+    };
+
+    const newEvent = await API.graphql(graphqlOperation(addTodo, todoDetails));
+    alert(JSON.stringify(newEvent));
+  };
+
+  const listQuery = async () => {
+    console.log("listing todos");
+    const allTodos = await API.graphql(graphqlOperation(listTodos));
+    alert(JSON.stringify(allTodos));
+  };
+
+  const post = async () => {
+    console.log("calling api");
+    const response = await API.post("myapi", "/items", {
+      body: {
+        id: "1",
+        name: "hello amplify!",
+      },
+    });
+    alert(JSON.stringify(response, null, 2));
+  };
+  const get = async () => {
+    console.log("calling api");
+    const response = await API.get("myapi", "/items/object/1");
+    alert(JSON.stringify(response, null, 2));
+  };
+  const list = async () => {
+    console.log("calling api");
+    const response = await API.get("myapi", "/items/1");
+    alert(JSON.stringify(response, null, 2));
+  };
+
   /*
 
 This app contains the rudiments of an ecommerce app.
@@ -84,6 +156,19 @@ This app contains the rudiments of an ecommerce app.
     history.push(newPath);
   };
 
+  const uploadFile = (evt) => {
+    const file = evt.target.files[0];
+    const name = file.name;
+
+    Storage.put(name, file).then(() => {
+      this.setState({ file: name });
+    });
+  };
+
+  useEffect(() => {
+    Analytics.record("Amplify_CLI");
+  }, []);
+
   const [selected, setSelected] = useState([]);
 
   const [productPageLinkString, setProductPageLinkString] = useState("");
@@ -108,6 +193,12 @@ This app contains the rudiments of an ecommerce app.
       }
     }, 1000);
   }
+
+  useEffect(() => {
+    // FB.getLoginStatus(function(response) {
+    //   statusChangeCallback(response);
+    // });
+  }, []);
 
   useEffect(() => {
     if (modalOpen) {
@@ -1591,4 +1682,4 @@ This app contains the rudiments of an ecommerce app.
   );
 }
 
-export default App;
+export default withAuthenticator(App, true);

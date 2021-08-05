@@ -10,6 +10,17 @@
       "StackName": "amplify-jcollection-dev-134516",
       "StackId": "arn:aws:cloudformation:us-east-1:008421350711:stack/amplify-jcollection-dev-134516/ad3b7570-f625-11eb-87ae-0ef76ddd227b",
       "AmplifyAppId": "d159hgjl305h8k"
+    },
+    "categories": {
+      "auth": {
+        "jcollection656e5dfb": {}
+      },
+      "function": {
+        "jcollectionccb9fc4a": {
+          "deploymentBucketName": "amplify-jcollection-dev-134516-deployment",
+          "s3Key": "amplify-builds/jcollectionccb9fc4a-3639533136694d32505a-build.zip"
+        }
+      }
     }
   }
 }
