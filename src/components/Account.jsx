@@ -1,5 +1,6 @@
 import React from "react";
 import { Context } from "../Context";
+import fb from "fb";
 
 const Account = () => {
   // function checkLoginState() {
@@ -10,10 +11,10 @@ const Account = () => {
 
   return (
     <div>
-      {/* <fb:login-button 
+      {/* <fb:login-button
         scope="public_profile,email"
-        onlogin="checkLoginState();">
-        </fb:login-button> */}
+        onlogin="checkLoginState();"
+      ></fb:login-button> */}
       <div
         id="g_id_onload"
         data-client_id="35357744009-tgq"

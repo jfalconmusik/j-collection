@@ -13,6 +13,7 @@
     "aws-amplify-react": "^5.0.8",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "fb": "^2.0.0",
     "flexbox-react": "^4.4.0",
     "multer": "^1.4.2",
     "nodemailer": "^6.6.3",
