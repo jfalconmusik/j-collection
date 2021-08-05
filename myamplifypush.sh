@@ -100,6 +100,10 @@ AUTHCONFIG="{\
 \"facebookAppId\":\"fbid1\",\
 \"googleClientId\":\"goog\",\
 \"amazonAppId\":\"amzn1\"\
+\"googleAppIdUserPool\":\"googUse1\"\
+\"googleAppSecretUserPool\":\"googSecret1\"\
+\"loginwithamazonAppIdUserPool\":\"amznUse1\"\
+\"loginwithamazonAppSecretUserPool\":\"amznSecret1\"\
 }"
 
 CATEGORIES="{\
