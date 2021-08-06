@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/auth": "^3.4.34",
     "@aws-amplify/core": "^3.8.24",
+    "@aws-amplify/interactions": "^3.3.34",
     "@aws-amplify/xr": "^2.2.34",
     "@stripe/react-stripe-js": "^1.4.1",
     "@stripe/stripe-js": "^1.16.0",
