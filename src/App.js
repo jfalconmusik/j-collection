@@ -12,7 +12,7 @@ import Amplify, {
   graphqlOperation,
 } from "aws-amplify";
 import { withAuthenticator, S3Album } from "aws-amplify-react";
-import { awsmobile as aws_exports } from "./aws-exports.js";
+// import { awsmobile as aws_exports } from "./aws-exports.js";
 import About from "./components/About.jsx";
 import Header from "./components/Header.jsx";
 import Contact from "./components/Contact.jsx";
@@ -29,7 +29,39 @@ import Sidebar from "react-sidebar";
 import OrderSuccess from "./components/OrderSuccess.jsx";
 import Billing from "./components/Billing.jsx";
 
-Amplify.configure(aws_exports);
+Amplify.configure({
+  aws_project_region: "us-east-1",
+  aws_dynamodb_all_tables_region: "us-east-1",
+  aws_dynamodb_table_schemas: [
+    {
+      tableName: "Domestics-dev",
+      region: "us-east-1",
+    },
+  ],
+  aws_cognito_identity_pool_id:
+    "us-east-1:8c23f1ff-7b8d-4966-979b-2700e702aa81",
+  aws_cognito_region: "us-east-1",
+  aws_user_pools_id: "us-east-1_kuI04tCRC",
+  aws_user_pools_web_client_id: "2fs5ojl0no2rlf7ihraqiic091",
+  oauth: {
+    domain: "jcollection656e5dfb-656e5dfb-dev.auth.us-east-1.amazoncognito.com",
+    scope: [
+      "phone",
+      "email",
+      "openid",
+      "profile",
+      "aws.cognito.signin.user.admin",
+    ],
+    redirectSignIn: "https://jcollection/sign-in/",
+    redirectSignOut: "https://jcollection/sign-out/",
+    responseType: "code",
+  },
+  federationTarget: "COGNITO_USER_POOLS",
+  aws_appsync_graphqlEndpoint:
+    "https://bvr7xryc2rf2bpeiuvbtknemya.appsync-api.us-east-1.amazonaws.com/graphql",
+  aws_appsync_region: "us-east-1",
+  aws_appsync_authenticationType: "AMAZON_COGNITO_USER_POOLS",
+});
 Storage.configure({ level: "private" });
 
 // for graphQL
