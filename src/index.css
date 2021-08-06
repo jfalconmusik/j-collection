@@ -19,7 +19,7 @@ h1 {
 
 .logo {
   margin: 0 auto;
-  bottom: 200px;
+  /* bottom: 200px; */
   position: relative;
   z-index: 99;
 }

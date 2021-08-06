@@ -825,7 +825,7 @@ This app contains the rudiments of an ecommerce app.
             className="title-bar-title show-for-large"
           >
             <img
-              style={{ transform: "scale(0.7)" }}
+              style={{ transform: "scale(0.7)", position: "static" }}
               className="logo"
               src="https://i.ibb.co/xzRRZyf/untitled-1.png"
               alt="j collection logo"
