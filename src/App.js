@@ -804,7 +804,7 @@ This app contains the rudiments of an ecommerce app.
           // main sticky responsive bar
           style={{
             maxHeight: "3.5em",
-
+            bottom: "70vh",
             zIndex: "98",
             maxWidth: "100vw",
             // boxShadow: "0px 1px 0px #42536e",
@@ -818,7 +818,7 @@ This app contains the rudiments of an ecommerce app.
             style={{
               whiteSpace: "nowrap",
               maxWidth: "100vw",
-              bottom: "-150px",
+              bottom: "-300px",
               position: "relative",
               zIndex: "99",
             }}
