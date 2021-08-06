@@ -1,6 +1,7 @@
 import React from "react";
 import { Context } from "../Context";
 import fb from "fb";
+import { AmplifyAuthenticator } from "@aws-amplify/ui-react";
 
 const Account = () => {
   // function checkLoginState() {
@@ -8,6 +9,12 @@ const Account = () => {
   //       statusChangeCallback(response);
   //     });
   //   }
+
+  const federated = {
+    googleClientId: "", // Enter your googleClientId here
+    facebookAppId: "", // Enter your facebookAppId here
+    amazonClientId: "", // Enter your amazonClientId here
+  };
 
   return (
     <div>
@@ -30,6 +37,7 @@ const Account = () => {
         data-shape="rectangular"
         data-logo_alignment="left"
       ></div> */}
+      <AmplifyAuthenticator federated={federated}></AmplifyAuthenticator>
     </div>
   );
 };
