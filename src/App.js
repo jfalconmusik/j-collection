@@ -805,6 +805,7 @@ This app contains the rudiments of an ecommerce app.
           style={{
             maxHeight: "3.5em",
             bottom: "70vh",
+            position: "relative",
             zIndex: "98",
             maxWidth: "100vw",
             // boxShadow: "0px 1px 0px #42536e",
