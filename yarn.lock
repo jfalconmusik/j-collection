@@ -284,7 +284,7 @@
   "resolved" "https://registry.npmjs.org/@aws-amplify/ui/-/ui-2.0.3.tgz"
   "version" "2.0.3"
 
-"@aws-amplify/xr@2.x.x":
+"@aws-amplify/xr@^2.2.34", "@aws-amplify/xr@2.x.x":
   "integrity" "sha512-EooROlYAPQ6ty5lB7tRjXiXPtTIMsgDXidKUmNG8UPMbjbSYGQUVWA8TSYc18tJ/zYyiDYHCFH7MzIzv425FNQ=="
   "resolved" "https://registry.npmjs.org/@aws-amplify/xr/-/xr-2.2.34.tgz"
   "version" "2.2.34"
