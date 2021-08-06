@@ -795,7 +795,7 @@ This app contains the rudiments of an ecommerce app.
         style={{
           position: "sticky",
           "overflow-x": "visible",
-          top: ".1em",
+          top: ".01em",
           marginBottom: "30px",
           "z-index": "99",
         }}
