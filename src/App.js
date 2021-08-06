@@ -819,7 +819,7 @@ This app contains the rudiments of an ecommerce app.
             style={{
               whiteSpace: "nowrap",
               maxWidth: "100vw",
-              bottom: "-285px",
+              bottom: "-275px",
               position: "relative",
               zIndex: "99",
             }}
@@ -1107,7 +1107,7 @@ This app contains the rudiments of an ecommerce app.
                 display: "flex",
                 justifyContent: "space-between",
                 width: "130px",
-                bottom: "-100px",
+                bottom: "-115px",
                 zIndex: "99",
               }}
             >
@@ -1177,7 +1177,7 @@ This app contains the rudiments of an ecommerce app.
                         display: "inline-block",
                         // right: "15%",
                         position: "relative",
-                        bottom: "-30px",
+                        bottom: "-50px",
                         outline: "none",
                         border: "none",
                         right: "700px",
