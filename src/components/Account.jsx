@@ -20,9 +20,11 @@ const Account = () => {
   //   }
 
   const federated = {
-    googleClientId: "", // Enter your googleClientId here
-    facebookAppId: "", // Enter your facebookAppId here
-    amazonClientId: "", // Enter your amazonClientId here
+    googleClientId:
+      "35357744009-tgq03nqsmakcs4s9uh9truuu8uo78r7l.apps.googleusercontent.com", // Enter your googleClientId here
+    facebookAppId: "3002736326711611", // Enter your facebookAppId here
+    amazonClientId:
+      "amzn1.application-oa2-client.bc8dce532d1249c19cdad1d099cff313", // Enter your amazonClientId here
   };
 
   return (
@@ -46,10 +48,9 @@ const Account = () => {
         data-shape="rectangular"
         data-logo_alignment="left"
       ></div> */}
+      <div className="spacer"></div>
       <AmplifyAuthenticator federated={federated}></AmplifyAuthenticator>
-      <AmplifySignOut />
-
-      <button onClick={() => Auth.federatedSignIn({ provider: "Facebook" })}>
+      {/* <button onClick={() => Auth.federatedSignIn({ provider: "Facebook" })}>
         Open Facebook
       </button>
       <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
@@ -57,8 +58,9 @@ const Account = () => {
       </button>
       <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
       <button onClick={() => Auth.signOut()}>
-        {/* Sign Out {user.getUsername()} */}
-      </button>
+        Sign Out {user.getUsername()}
+      </button> */}
+      <AmplifySignOut />
     </div>
   );
 };

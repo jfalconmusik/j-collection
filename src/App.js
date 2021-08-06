@@ -805,7 +805,7 @@ This app contains the rudiments of an ecommerce app.
           style={{
             maxHeight: "3.5em",
 
-            zIndex: "96",
+            zIndex: "98",
             maxWidth: "100vw",
             // boxShadow: "0px 1px 0px #42536e",
           }}
@@ -815,7 +815,13 @@ This app contains the rudiments of an ecommerce app.
           hideFor="medium"
         >
           <div
-            style={{ whiteSpace: "nowrap", maxWidth: "100vw" }}
+            style={{
+              whiteSpace: "nowrap",
+              maxWidth: "100vw",
+              bottom: "-150px",
+              position: "relative",
+              zIndex: "99",
+            }}
             className="title-bar-title show-for-large"
           >
             <img
@@ -997,8 +1003,12 @@ This app contains the rudiments of an ecommerce app.
             className="dropdown menu"
             hideFor="medium"
             style={{
-              position: "static",
-              "max-height": "3.5em",
+              position: "relative",
+              // "max-height": "3.5em",
+              height: "300px",
+              bottom: "275px",
+              backgroundColor: "white",
+              zIndex: "90",
             }}
             data-dropdown-menu
           >
@@ -1090,12 +1100,14 @@ This app contains the rudiments of an ecommerce app.
               style={{
                 float: "right",
                 right: "100px",
-                bottom: "700px",
+                // bottom: "700px",
                 flexDirection: "row",
                 position: "relative",
                 display: "flex",
                 justifyContent: "space-between",
                 width: "130px",
+                bottom: "-100px",
+                zIndex: "99",
               }}
             >
               <img
@@ -1164,7 +1176,7 @@ This app contains the rudiments of an ecommerce app.
                         display: "inline-block",
                         // right: "15%",
                         position: "relative",
-                        bottom: "750px",
+                        bottom: "-50px",
                         outline: "none",
                         border: "none",
                         right: "700px",
