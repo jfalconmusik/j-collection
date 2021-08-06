@@ -76,7 +76,7 @@
     "@aws-amplify/core" "4.2.2"
     "axios" "0.21.1"
 
-"@aws-amplify/api@3.x.x":
+"@aws-amplify/api@^3.3.3", "@aws-amplify/api@3.x.x":
   "integrity" "sha512-4gH7HWQCRARnfDtlDv/YxqQ3p0NMqn52KLarLm4wj0iajfztWZUyC3Yanf9srnseoVVrdkNYHV67zHMkpRBVQg=="
   "resolved" "https://registry.npmjs.org/@aws-amplify/api/-/api-3.3.3.tgz"
   "version" "3.3.3"
