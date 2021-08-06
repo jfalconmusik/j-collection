@@ -774,81 +774,68 @@ This app contains the rudiments of an ecommerce app.
 
   return (
     <div className="App">
-      <Authenticator>
-        <AmplifySignOut />
-
-        <button onClick={() => Auth.federatedSignIn({ provider: "Facebook" })}>
-          Open Facebook
-        </button>
-        <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
-          Open Google
-        </button>
-        <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
-        <button onClick={() => Auth.signOut()}>
-          {/* Sign Out {user.getUsername()} */}
-        </button>
-        <header
-          style={{
-            "max-height": "8em",
-            bottom: "7em",
-            // "background-color": "black",
-          }}
-        >
-          <div>
-            <div id="headerHeight">
-              <Header />
-            </div>
+      <header
+        style={{
+          "max-height": "8em",
+          bottom: "7em",
+          // "background-color": "black",
+        }}
+      >
+        <div>
+          <div id="headerHeight">
+            <Header />
           </div>
-        </header>
+        </div>
+      </header>
+      <div
+        // data-toggle="example-menu"
+        // onMouseOut={() => setListShow("hidden")}
+        data-sticky-container
+        data-stick-to="top"
+        style={{
+          position: "sticky",
+          "overflow-x": "visible",
+          top: ".1em",
+          marginBottom: "30px",
+          "z-index": "99",
+        }}
+      >
         <div
-          // data-toggle="example-menu"
-          // onMouseOut={() => setListShow("hidden")}
-          data-sticky-container
-          data-stick-to="top"
+          // main sticky responsive bar
           style={{
-            position: "sticky",
-            "overflow-x": "visible",
-            top: ".1em",
-            marginBottom: "30px",
-            "z-index": "99",
+            maxHeight: "3.5em",
+
+            zIndex: "96",
+            maxWidth: "100vw",
+            // boxShadow: "0px 1px 0px #42536e",
           }}
+          id="example-menu"
+          className="title-bar"
+          data-responsive-toggle="example-menu"
+          hideFor="medium"
         >
           <div
-            // main sticky responsive bar
-            style={{
-              maxHeight: "3.5em",
-
-              zIndex: "96",
-              maxWidth: "100vw",
-              // boxShadow: "0px 1px 0px #42536e",
-            }}
-            id="example-menu"
-            className="title-bar"
-            data-responsive-toggle="example-menu"
-            hideFor="medium"
+            style={{ whiteSpace: "nowrap", maxWidth: "100vw" }}
+            className="title-bar-title show-for-large"
           >
-            <div
-              style={{ whiteSpace: "nowrap", maxWidth: "100vw" }}
-              className="title-bar-title show-for-large"
-            >
-              <img
-                style={{ transform: "scale(0.7)" }}
-                className="logo"
-                src="https://i.ibb.co/xzRRZyf/untitled-1.png"
-                alt="j collection logo"
-              ></img>
+            <img
+              style={{ transform: "scale(0.7)" }}
+              className="logo"
+              src="https://i.ibb.co/xzRRZyf/untitled-1.png"
+              alt="j collection logo"
+            ></img>
 
-              <Link
-                to="/"
-                onMouseOver={() => setShowMenuHome(true)}
-                style={{
-                  height: "100px",
-                  width: "200px",
-                  zIndex: "99",
-                  display: "flex",
-                }}
-              >
-                {/* <Flexbox flexDirection="row">
+            <Link
+              to="/"
+              onMouseOver={() => setShowMenuHome(true)}
+              style={{
+                height: "100px",
+                width: "200px",
+                zIndex: "99",
+                display: "flex",
+              }}
+            >
+              {/* <Flexbox flexDirection="row">
                 <img
                   alt="j collection logo"
                   // width="100px"
@@ -864,27 +851,27 @@ This app contains the rudiments of an ecommerce app.
                   }}
                 ></img>
               </Flexbox> */}
-              </Link>
-              {/* <HomeMenu /> */}
-            </div>
-            <button
-              onClick={() => handleSidebar()}
-              style={{
-                // visibility: `${hamburgerDisplayString}`,
-                "z-index": "99",
-                "font-size": "larger",
-                top: ".75em",
-                width: "8vw",
-                height: "10vw",
-                position: "absolute",
-                // paddingRight: "-50px",
-                display: `${isPortrait ? "initial" : "none"}`,
-              }}
-              data-toggle="example-menu"
-              className="hide-for-large menu-icon"
-              type="button"
-            ></button>
-            {/* <Link
+            </Link>
+            {/* <HomeMenu /> */}
+          </div>
+          <button
+            onClick={() => handleSidebar()}
+            style={{
+              // visibility: `${hamburgerDisplayString}`,
+              "z-index": "99",
+              "font-size": "larger",
+              top: ".75em",
+              width: "8vw",
+              height: "10vw",
+              position: "absolute",
+              // paddingRight: "-50px",
+              display: `${isPortrait ? "initial" : "none"}`,
+            }}
+            data-toggle="example-menu"
+            className="hide-for-large menu-icon"
+            type="button"
+          ></button>
+          {/* <Link
             style={{
               whiteSpace: "nowrap",
               margin: "0em",
@@ -901,65 +888,40 @@ This app contains the rudiments of an ecommerce app.
             ></img>
           </Link> */}
 
-            <div
-              // className="hide-for-large"
-              style={{
-                float: "left",
-                display: "inline-block",
-                top: "5em",
-              }}
-            >
-              <Flexbox flexDirection="row" style={{ maxWidth: "100%" }}>
-                <form
-                  // this is the search box for mobile
-                  className="hide-for-large"
-                  autocomplete="off"
+          <div
+            // className="hide-for-large"
+            style={{
+              float: "left",
+              display: "inline-block",
+              top: "5em",
+            }}
+          >
+            <Flexbox flexDirection="row" style={{ maxWidth: "100%" }}>
+              <form
+                // this is the search box for mobile
+                className="hide-for-large"
+                autocomplete="off"
+                style={{
+                  float: "left",
+                  // visibility: `${listItemDisplay}`,
+                  display: `${isPortrait ? "inline-block" : "none"}`,
+                  "margin-left": "34vw",
+                  "margin-top": "10em",
+                  "margin-bottom": "1.3em",
+                }}
+              >
+                <div
+                  className="autocomplete"
                   style={{
                     float: "left",
-                    // visibility: `${listItemDisplay}`,
-                    display: `${isPortrait ? "inline-block" : "none"}`,
-                    "margin-left": "34vw",
-                    "margin-top": "10em",
-                    "margin-bottom": "1.3em",
                   }}
                 >
-                  <div
-                    className="autocomplete"
-                    style={{
-                      float: "left",
-                    }}
-                  >
-                    {!searchString ? (
-                      <Link to="/">
-                        <input
-                          style={{
-                            left: "20em",
-                            bottom: "500px",
-                            width: "40vw",
-                            fontSize: "small",
-                          }}
-                          type="text"
-                          id="menuSearch"
-                          // onKeyPress={() => {
-                          //   handleSearchShop("menuSearch");
-                          // }}
-                          // onKeyUp={() => {
-                          //   handleSearchShop("menuSearch");
-                          //   autocomplete(
-                          //     document.getElementById(`menuSearch`),
-                          //     searchArray
-                          //   );
-                          // }}
-                          placeholder={`Search ${
-                            searchString ? searchString : "Domestics near you"
-                          }...`}
-                        ></input>
-                      </Link>
-                    ) : (
+                  {!searchString ? (
+                    <Link to="/">
                       <input
                         style={{
-                          bottom: "500px",
                           left: "20em",
+                          bottom: "500px",
                           width: "40vw",
                           fontSize: "small",
                         }}
@@ -979,20 +941,45 @@ This app contains the rudiments of an ecommerce app.
                           searchString ? searchString : "Domestics near you"
                         }...`}
                       ></input>
-                    )}
-                  </div>
-                </form>
-                <div
-                  style={{
-                    display: "inline-block",
-                    float: "right",
-                    top: "15em",
-                    "margin-left": "5vw",
-                    "margin-top": "6em",
-                    marginBottom: "-1.7em",
-                  }}
-                >
-                  {/* <Link to="/cart" className="cartIcon">
+                    </Link>
+                  ) : (
+                    <input
+                      style={{
+                        bottom: "500px",
+                        left: "20em",
+                        width: "40vw",
+                        fontSize: "small",
+                      }}
+                      type="text"
+                      id="menuSearch"
+                      // onKeyPress={() => {
+                      //   handleSearchShop("menuSearch");
+                      // }}
+                      // onKeyUp={() => {
+                      //   handleSearchShop("menuSearch");
+                      //   autocomplete(
+                      //     document.getElementById(`menuSearch`),
+                      //     searchArray
+                      //   );
+                      // }}
+                      placeholder={`Search ${
+                        searchString ? searchString : "Domestics near you"
+                      }...`}
+                    ></input>
+                  )}
+                </div>
+              </form>
+              <div
+                style={{
+                  display: "inline-block",
+                  float: "right",
+                  top: "15em",
+                  "margin-left": "5vw",
+                  "margin-top": "6em",
+                  marginBottom: "-1.7em",
+                }}
+              >
+                {/* <Link to="/cart" className="cartIcon">
                   <img
                     alt="cart icon"
                     src={`${urlString}`}
@@ -1003,231 +990,201 @@ This app contains the rudiments of an ecommerce app.
                     height="auto"
                   ></img>
                 </Link> */}
-                </div>
-              </Flexbox>
-            </div>
-            <ul
-              className="dropdown menu"
-              hideFor="medium"
+              </div>
+            </Flexbox>
+          </div>
+          <ul
+            className="dropdown menu"
+            hideFor="medium"
+            style={{
+              position: "static",
+              "max-height": "3.5em",
+            }}
+            data-dropdown-menu
+          >
+            <li
               style={{
-                position: "static",
-                "max-height": "3.5em",
+                right: "4em",
+                justifyContent: "space-between",
+                maxWidth: "100vw",
+                display: "inline-block",
+                textDecoration: "none",
               }}
-              data-dropdown-menu
+              onMouseOver={() => setShowMenuShop(true)}
             >
-              <li
-                style={{
-                  right: "4em",
-                  justifyContent: "space-between",
-                  maxWidth: "100vw",
-                  display: "inline-block",
-                  textDecoration: "none",
-                }}
-                onMouseOver={() => setShowMenuShop(true)}
-              >
-                <li style={{ display: "flex", flexDirection: "column" }}>
-                  <Link
-                    onClick={() => setOnHomeScreen(true)}
-                    style={{
-                      color: `${onHomeScreen ? styleColors.maroon : "black"}`,
-                      // float: "left",
-                      height: "100px",
-                      left: "500px",
-                      top: "180px",
-                      bottom: "0px",
-                      "overflow-x": "hidden",
-                      // visibility: `${listItemDisplay}`,
-                      "font-size": "xx-large",
-                      position: "absolute",
-                      padding: "30px",
-                      paddingBottom: "15px",
-                      textDecoration: "none",
-                    }}
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li style={{ display: "flex", flexDirection: "column" }}>
-                  <Link
-                    onClick={() => setOnBrowse(true)}
-                    style={{
-                      // float: "left",
-                      height: "300px",
-                      left: "800px",
-                      top: "180px",
-                      bottom: "0px",
-                      "overflow-x": "hidden",
-                      // visibility: `${listItemDisplay}`,
-                      "font-size": "xx-large",
-                      position: "absolute",
-                      padding: "30px",
-                      paddingBottom: "15px",
-                      textDecoration: "none",
-                      color: `${onBrowse ? styleColors.maroon : "black"}`,
-                    }}
-                    to="/shop"
-                    className="show-for-large"
-                    id="shopId"
-                  >
-                    Browse
-                  </Link>
-
-                  {/* <ShopMenu /> */}
-                </li>
-                <li style={{ display: "flex", flexDirection: "column" }}>
-                  <Link
-                    onClick={() => setOnAccount(true)}
-                    style={{
-                      // float: "left",
-                      height: "100px",
-                      left: "1100px",
-                      top: "180px",
-                      bottom: "0px",
-                      "overflow-x": "hidden",
-                      // visibility: `${listItemDisplay}`,
-                      "font-size": "xx-large",
-                      position: "absolute",
-                      padding: "30px",
-                      paddingBottom: "15px",
-                      textDecoration: "none",
-                      color: `${onAccount ? styleColors.maroon : "black"}`,
-                    }}
-                    to="/account"
-                  >
-                    Account
-                  </Link>
-                </li>
-              </li>
-              <li
-                style={{
-                  float: "right",
-                  right: "100px",
-                  bottom: "700px",
-                  flexDirection: "row",
-                  position: "relative",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "130px",
-                }}
-              >
-                <img
-                  width="20px"
-                  alt="pinterest"
-                  src="https://i.ibb.co/5Bb3gHX/pinterest-social-logo.png"
-                />
-                <img
-                  width="20px"
-                  src="https://i.ibb.co/MhrzBKH/twitter.png"
-                  alt="twitter"
-                  border="0"
-                />
-                <img
-                  width="20px"
-                  src="https://i.ibb.co/gP4RKF8/facebook.png"
-                  alt="facebook"
-                  border="0"
-                />
-                <img
-                  width="20px"
-                  src="https://i.ibb.co/nMcYrk9/instagram.png"
-                  alt="instagram"
-                  border="0"
-                />
-              </li>
-              <li
-                style={{
-                  display: "flex",
-                  // float: "left",
-                  position: "relative",
-                  whiteSpace: "nowrap",
-                  right: "300px",
-                  bottom: ".6em",
-                  pointerEvents: "none",
-                }}
-              >
-                <span
+              <li style={{ display: "flex", flexDirection: "column" }}>
+                <Link
+                  onClick={() => setOnHomeScreen(true)}
                   style={{
-                    display: "flex",
-                    // justifyContent: "space-between",
-                    // maxWidth: "100vw",
-                    float: "right",
-                    position: "relative",
-                    marginLeft: "60vw",
-                    whiteSpace: "nowrap",
-                    maxHeight: "2em",
+                    color: `${onHomeScreen ? styleColors.maroon : "black"}`,
+                    // float: "left",
+                    height: "100px",
+                    left: "500px",
+                    top: "180px",
+                    bottom: "0px",
+                    "overflow-x": "hidden",
+                    // visibility: `${listItemDisplay}`,
+                    "font-size": "xx-large",
+                    position: "absolute",
+                    padding: "30px",
+                    paddingBottom: "15px",
+                    textDecoration: "none",
                   }}
+                  to="/"
                 >
-                  <span style={{}}>
-                    <form
-                      className="show-for-large"
-                      autocomplete="off"
+                  Home
+                </Link>
+              </li>
+              <li style={{ display: "flex", flexDirection: "column" }}>
+                <Link
+                  onClick={() => setOnBrowse(true)}
+                  style={{
+                    // float: "left",
+                    height: "300px",
+                    left: "800px",
+                    top: "180px",
+                    bottom: "0px",
+                    "overflow-x": "hidden",
+                    // visibility: `${listItemDisplay}`,
+                    "font-size": "xx-large",
+                    position: "absolute",
+                    padding: "30px",
+                    paddingBottom: "15px",
+                    textDecoration: "none",
+                    color: `${onBrowse ? styleColors.maroon : "black"}`,
+                  }}
+                  to="/shop"
+                  className="show-for-large"
+                  id="shopId"
+                >
+                  Browse
+                </Link>
+
+                {/* <ShopMenu /> */}
+              </li>
+              <li style={{ display: "flex", flexDirection: "column" }}>
+                <Link
+                  onClick={() => setOnAccount(true)}
+                  style={{
+                    // float: "left",
+                    height: "100px",
+                    left: "1100px",
+                    top: "180px",
+                    bottom: "0px",
+                    "overflow-x": "hidden",
+                    // visibility: `${listItemDisplay}`,
+                    "font-size": "xx-large",
+                    position: "absolute",
+                    padding: "30px",
+                    paddingBottom: "15px",
+                    textDecoration: "none",
+                    color: `${onAccount ? styleColors.maroon : "black"}`,
+                  }}
+                  to="/account"
+                >
+                  Account
+                </Link>
+              </li>
+            </li>
+            <li
+              style={{
+                float: "right",
+                right: "100px",
+                bottom: "700px",
+                flexDirection: "row",
+                position: "relative",
+                display: "flex",
+                justifyContent: "space-between",
+                width: "130px",
+              }}
+            >
+              <img
+                width="20px"
+                alt="pinterest"
+                src="https://i.ibb.co/5Bb3gHX/pinterest-social-logo.png"
+              />
+              <img
+                width="20px"
+                src="https://i.ibb.co/MhrzBKH/twitter.png"
+                alt="twitter"
+                border="0"
+              />
+              <img
+                width="20px"
+                src="https://i.ibb.co/gP4RKF8/facebook.png"
+                alt="facebook"
+                border="0"
+              />
+              <img
+                width="20px"
+                src="https://i.ibb.co/nMcYrk9/instagram.png"
+                alt="instagram"
+                border="0"
+              />
+            </li>
+            <li
+              style={{
+                display: "flex",
+                // float: "left",
+                position: "relative",
+                whiteSpace: "nowrap",
+                right: "300px",
+                bottom: ".6em",
+                pointerEvents: "none",
+              }}
+            >
+              <span
+                style={{
+                  display: "flex",
+                  // justifyContent: "space-between",
+                  // maxWidth: "100vw",
+                  float: "right",
+                  position: "relative",
+                  marginLeft: "60vw",
+                  whiteSpace: "nowrap",
+                  maxHeight: "2em",
+                }}
+              >
+                <span style={{}}>
+                  <form
+                    className="show-for-large"
+                    autocomplete="off"
+                    style={{
+                      position: "relative",
+                      bottom: "-2.8em",
+                      // right: "1.8em",
+                      // float: "left",
+                      // visibility: `${listItemDisplay}`,
+                      pointerEvents: "all",
+                    }}
+                  >
+                    <div
+                      className="autocomplete"
                       style={{
+                        display: "inline-block",
+                        // right: "15%",
                         position: "relative",
-                        bottom: "-2.8em",
-                        // right: "1.8em",
-                        // float: "left",
-                        // visibility: `${listItemDisplay}`,
-                        pointerEvents: "all",
+                        bottom: "750px",
+                        outline: "none",
+                        border: "none",
+                        right: "700px",
+                        marginTop: "12px",
+                        float: "left",
                       }}
                     >
-                      <div
-                        className="autocomplete"
-                        style={{
-                          display: "inline-block",
-                          // right: "15%",
-                          position: "relative",
-                          bottom: "750px",
-                          outline: "none",
-                          border: "none",
-                          right: "700px",
-                          marginTop: "12px",
-                          float: "left",
-                        }}
-                      >
-                        {!searchString ? (
-                          <Link to="/shop">
-                            <input
-                              style={{
-                                // right: "40em",
-
-                                float: "left",
-                                width: "15vw",
-                                outline: "none",
-                                border: "none",
-                                height: "45px",
-                                backgroundColor: "#ededed",
-                                marginRight: "0em",
-                              }}
-                              type="text"
-                              id="menuSearch2"
-                              // onKeyPress={() => {
-                              //   handleSearchShop("menuSearch2");
-                              // }}
-                              // onKeyUp={() => {
-                              //   handleSearchShop("menuSearch2");
-                              //   autocomplete(
-                              //     document.getElementById(`menuSearch2`),
-                              //     searchArray
-                              //   );
-                              // }}
-                              // placeholder={`Search ${
-                              //   searchString ? searchString : "Domestics near you"
-                              // }...`}
-                            ></input>
-                          </Link>
-                        ) : (
+                      {!searchString ? (
+                        <Link to="/shop">
                           <input
                             style={{
-                              right: "15%",
+                              // right: "40em",
+
                               float: "left",
                               width: "15vw",
                               outline: "none",
                               border: "none",
                               height: "45px",
+                              backgroundColor: "#ededed",
                               marginRight: "0em",
-                              top: "13px",
-                              position: "relative",
                             }}
                             type="text"
                             id="menuSearch2"
@@ -1241,208 +1198,266 @@ This app contains the rudiments of an ecommerce app.
                             //     searchArray
                             //   );
                             // }}
-                            // placeholder={`Search in ${searchString}...`}
+                            // placeholder={`Search ${
+                            //   searchString ? searchString : "Domestics near you"
+                            // }...`}
                           ></input>
-                        )}
-                        <button
-                          type="button"
-                          style={{ outline: "none", border: "none" }}
-                        >
-                          <img
-                            width="42px"
-                            src="https://i.ibb.co/wpP9R9W/magnifying-glass.png"
-                            alt="search button magnifying glass"
-                          ></img>
-                        </button>
-                      </div>
-                    </form>
-                  </span>
-                  <span
-                    onMouseOver={() => setShowMenuAccount(true)}
-                    className="show-for-large"
-                    style={{
-                      // visibility: `${listItemDisplay}`,
-                      position: "relative",
-                      display: "flex",
-                      flexDirection: "column",
-                      bottom: "13px",
-                      left: "1em",
-                      marginTop: "9px",
-                      pointerEvents: "all",
-                    }}
-                  >
-                    <Link to="/account" className="li row hoverPink">
-                      {accountTitleString}
-                    </Link>
-                    {/* <AccountMenu /> */}
-                  </span>
+                        </Link>
+                      ) : (
+                        <input
+                          style={{
+                            right: "15%",
+                            float: "left",
+                            width: "15vw",
+                            outline: "none",
+                            border: "none",
+                            height: "45px",
+                            marginRight: "0em",
+                            top: "13px",
+                            position: "relative",
+                          }}
+                          type="text"
+                          id="menuSearch2"
+                          // onKeyPress={() => {
+                          //   handleSearchShop("menuSearch2");
+                          // }}
+                          // onKeyUp={() => {
+                          //   handleSearchShop("menuSearch2");
+                          //   autocomplete(
+                          //     document.getElementById(`menuSearch2`),
+                          //     searchArray
+                          //   );
+                          // }}
+                          // placeholder={`Search in ${searchString}...`}
+                        ></input>
+                      )}
+                      <button
+                        type="button"
+                        style={{ outline: "none", border: "none" }}
+                      >
+                        <img
+                          width="42px"
+                          src="https://i.ibb.co/wpP9R9W/magnifying-glass.png"
+                          alt="search button magnifying glass"
+                        ></img>
+                      </button>
+                    </div>
+                  </form>
                 </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          id="sidebar"
-          className="sidebar"
-          style={{
-            background: "black",
-            opacity: "0.89",
-            position: "fixed",
-            zIndex: "99",
-            top: "0em",
-            left: "0em",
-            width: "65%",
-            marginTop: "1em",
-            height: "250vh",
-            display: `${sidebarOpen ? "initial" : "none"}`,
-            whiteSpace: "nowrap",
-          }}
-        >
-          <div
-          // className="table-scroll"
-          // id="sidebar"
-          >
-            <table>
-              <Flexbox
-                flexDirection="row"
-                style={{
-                  position: "fixed",
-                  top: "1.3em",
-                }}
-              >
-                <Flexbox
-                  flexDirection="column"
-                  // onLoad={() => {
-                  //   setSidebarOpen(false);
-                  // }}
+                <span
+                  onMouseOver={() => setShowMenuAccount(true)}
+                  className="show-for-large"
                   style={{
-                    top: "0.4em",
+                    // visibility: `${listItemDisplay}`,
                     position: "relative",
-                    left: "2em",
-                    textAlign: "left",
+                    display: "flex",
+                    flexDirection: "column",
+                    bottom: "13px",
+                    left: "1em",
+                    marginTop: "9px",
+                    pointerEvents: "all",
                   }}
                 >
-                  <Link
-                    className="largeText smushed"
-                    to="/"
-                    onClick={() => handleSidebar()}
-                  >
-                    <button
-                      type="button"
-                      className="button small"
-                      style={{
-                        width: "100px",
-                        backgroundColor: styleColors.hotPink,
-                        fontSize: "medium",
-                      }}
-                    >
-                      Home
-                    </button>
+                  <Link to="/account" className="li row hoverPink">
+                    {accountTitleString}
                   </Link>
-                  <Link className="largeText smushed" to="/contact">
-                    <button
-                      style={{
-                        width: "100px",
-                        backgroundColor: styleColors.maroon,
-                        fontSize: "medium",
-                      }}
-                      type="button"
-                      className="button small"
+                  {/* <AccountMenu /> */}
+                </span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        id="sidebar"
+        className="sidebar"
+        style={{
+          background: "black",
+          opacity: "0.89",
+          position: "fixed",
+          zIndex: "99",
+          top: "0em",
+          left: "0em",
+          width: "65%",
+          marginTop: "1em",
+          height: "250vh",
+          display: `${sidebarOpen ? "initial" : "none"}`,
+          whiteSpace: "nowrap",
+        }}
+      >
+        <div
+        // className="table-scroll"
+        // id="sidebar"
+        >
+          <table>
+            <Flexbox
+              flexDirection="row"
+              style={{
+                position: "fixed",
+                top: "1.3em",
+              }}
+            >
+              <Flexbox
+                flexDirection="column"
+                // onLoad={() => {
+                //   setSidebarOpen(false);
+                // }}
+                style={{
+                  top: "0.4em",
+                  position: "relative",
+                  left: "2em",
+                  textAlign: "left",
+                }}
+              >
+                <Link
+                  className="largeText smushed"
+                  to="/"
+                  onClick={() => handleSidebar()}
+                >
+                  <button
+                    type="button"
+                    className="button small"
+                    style={{
+                      width: "100px",
+                      backgroundColor: styleColors.hotPink,
+                      fontSize: "medium",
+                    }}
+                  >
+                    Home
+                  </button>
+                </Link>
+                <Link className="largeText smushed" to="/contact">
+                  <button
+                    style={{
+                      width: "100px",
+                      backgroundColor: styleColors.maroon,
+                      fontSize: "medium",
+                    }}
+                    type="button"
+                    className="button small"
+                    onClick={() => {
+                      handleSidebar();
+                    }}
+                  >
+                    <span style={{ right: "10px", position: "relative" }}>
+                      Contact Us
+                    </span>
+                  </button>
+                </Link>
+                <br></br>
+                {!mobileBottomsMenu && !mobileTopsMenu && (
+                  <div
+                    style={{
+                      display: `flex`,
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Link
+                      className="largeText smushed"
+                      to="/shop"
                       onClick={() => {
                         handleSidebar();
                       }}
                     >
-                      <span style={{ right: "10px", position: "relative" }}>
-                        Contact Us
-                      </span>
-                    </button>
-                  </Link>
-                  <br></br>
-                  {!mobileBottomsMenu && !mobileTopsMenu && (
-                    <div
-                      style={{
-                        display: `flex`,
-                        flexDirection: "column",
+                      <button
+                        type="button"
+                        className="button small"
+                        style={{
+                          width: "100px",
+                          fontSize: "medium",
+                          backgroundColor: styleColors.hotPink,
+                        }}
+                      >
+                        Shop All
+                      </button>
+                    </Link>
+                    <Link
+                      className="largeText smushed"
+                      to="/shop/full-sets"
+                      onClick={() => {
+                        handleSidebar();
                       }}
                     >
-                      <Link
-                        className="largeText smushed"
-                        to="/shop"
+                      <button
+                        type="button"
+                        className="button small"
+                        style={{
+                          width: "100px",
+                          fontSize: "medium",
+
+                          backgroundColor: styleColors.maroon,
+                        }}
                         onClick={() => {
                           handleSidebar();
                         }}
                       >
-                        <button
-                          type="button"
-                          className="button small"
-                          style={{
-                            width: "100px",
-                            fontSize: "medium",
-                            backgroundColor: styleColors.hotPink,
-                          }}
-                        >
-                          Shop All
-                        </button>
-                      </Link>
-                      <Link
-                        className="largeText smushed"
-                        to="/shop/full-sets"
-                        onClick={() => {
-                          handleSidebar();
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="button small"
-                          style={{
-                            width: "100px",
-                            fontSize: "medium",
-
-                            backgroundColor: styleColors.maroon,
-                          }}
-                          onClick={() => {
-                            handleSidebar();
-                          }}
-                        >
-                          Sets
-                        </button>
-                      </Link>
-
-                      <button
-                        type="button"
-                        className="button small largeText smushed"
-                        onClick={() => {
-                          setMobileTopsMenu(true);
-                        }}
-                        style={{
-                          marginTop: "-5px",
-                          marginBottom: "3px",
-                          width: "100px",
-                          fontSize: "medium",
-                          backgroundColor: styleColors.maroon,
-                        }}
-                      >
-                        {"Tops >"}
+                        Sets
                       </button>
+                    </Link>
 
-                      <button
-                        type="button"
-                        className="button small largeText smushed"
-                        onClick={() => setMobileBottomsMenu(true)}
-                        style={{
-                          width: "100px",
-                          fontSize: "medium",
-                          backgroundColor: styleColors.maroon,
-                        }}
-                      >
-                        <span style={{ right: "5px", position: "relative" }}>
-                          {"Bottoms >"}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                  {mobileTopsMenu && (
-                    <div>
+                    <button
+                      type="button"
+                      className="button small largeText smushed"
+                      onClick={() => {
+                        setMobileTopsMenu(true);
+                      }}
+                      style={{
+                        marginTop: "-5px",
+                        marginBottom: "3px",
+                        width: "100px",
+                        fontSize: "medium",
+                        backgroundColor: styleColors.maroon,
+                      }}
+                    >
+                      {"Tops >"}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="button small largeText smushed"
+                      onClick={() => setMobileBottomsMenu(true)}
+                      style={{
+                        width: "100px",
+                        fontSize: "medium",
+                        backgroundColor: styleColors.maroon,
+                      }}
+                    >
+                      <span style={{ right: "5px", position: "relative" }}>
+                        {"Bottoms >"}
+                      </span>
+                    </button>
+                  </div>
+                )}
+                {mobileTopsMenu && (
+                  <div>
+                    <button
+                      style={{
+                        bottom: "10px",
+                        right: "10px",
+                        position: "relative",
+                        display: "flex",
+                        flexDirection: "row",
+                      }}
+                      type="button"
+                      onClick={() => setMobileTopsMenu(false)}
+                    >
+                      <img
+                        alt="sidebar arrow"
+                        width="10em"
+                        style={{ top: "4px", position: "relative" }}
+                        height="auto"
+                        src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
+                      />
+                      <p style={{ color: "white", fontSize: "small" }}>Back</p>
+                    </button>
+                    <div
+                      style={{ display: "flex", flexDirection: "column" }}
+                    ></div>
+                  </div>
+                )}
+                {mobileBottomsMenu && (
+                  <div>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
                       <button
                         style={{
                           bottom: "10px",
@@ -1452,7 +1467,7 @@ This app contains the rudiments of an ecommerce app.
                           flexDirection: "row",
                         }}
                         type="button"
-                        onClick={() => setMobileTopsMenu(false)}
+                        onClick={() => setMobileBottomsMenu(false)}
                       >
                         <img
                           alt="sidebar arrow"
@@ -1465,105 +1480,96 @@ This app contains the rudiments of an ecommerce app.
                           Back
                         </p>
                       </button>
-                      <div
-                        style={{ display: "flex", flexDirection: "column" }}
-                      ></div>
-                    </div>
-                  )}
-                  {mobileBottomsMenu && (
-                    <div>
-                      <div style={{ display: "flex", flexDirection: "column" }}>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/skirts"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
                         <button
-                          style={{
-                            bottom: "10px",
-                            right: "10px",
-                            position: "relative",
-                            display: "flex",
-                            flexDirection: "row",
-                          }}
                           type="button"
-                          onClick={() => setMobileBottomsMenu(false)}
+                          className="button primary small"
+                          style={{
+                            width: "100px",
+                            backgroundColor: styleColors.maroon,
+                            fontSize: "medium",
+                          }}
                         >
-                          <img
-                            alt="sidebar arrow"
-                            width="10em"
-                            style={{ top: "4px", position: "relative" }}
-                            height="auto"
-                            src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
-                          />
-                          <p style={{ color: "white", fontSize: "small" }}>
-                            Back
-                          </p>
+                          {"Skirts"}
                         </button>
-                        <Link
-                          className="largeText smushed"
-                          to="/shop/skirts"
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/pants"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{
+                            width: "100px",
+                            backgroundColor: styleColors.maroon,
+                            fontSize: "medium",
+                          }}
+                        >
+                          {"Pants"}
+                        </button>
+                      </Link>
+                      <Link
+                        className="largeText smushed"
+                        to="/shop/belts"
+                        onClick={() => {
+                          handleSidebar();
+                          setMobileBottomsMenu(false);
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="button primary small"
+                          style={{
+                            width: "100px",
+                            backgroundColor: styleColors.maroon,
+                            fontSize: "medium",
+                          }}
                           onClick={() => {
                             handleSidebar();
                             setMobileBottomsMenu(false);
                           }}
                         >
-                          <button
-                            type="button"
-                            className="button primary small"
-                            style={{
-                              width: "100px",
-                              backgroundColor: styleColors.maroon,
-                              fontSize: "medium",
-                            }}
-                          >
-                            {"Skirts"}
-                          </button>
-                        </Link>
-                        <Link
-                          className="largeText smushed"
-                          to="/shop/pants"
-                          onClick={() => {
-                            handleSidebar();
-                            setMobileBottomsMenu(false);
-                          }}
-                        >
-                          <button
-                            type="button"
-                            className="button primary small"
-                            style={{
-                              width: "100px",
-                              backgroundColor: styleColors.maroon,
-                              fontSize: "medium",
-                            }}
-                          >
-                            {"Pants"}
-                          </button>
-                        </Link>
-                        <Link
-                          className="largeText smushed"
-                          to="/shop/belts"
-                          onClick={() => {
-                            handleSidebar();
-                            setMobileBottomsMenu(false);
-                          }}
-                        >
-                          <button
-                            type="button"
-                            className="button primary small"
-                            style={{
-                              width: "100px",
-                              backgroundColor: styleColors.maroon,
-                              fontSize: "medium",
-                            }}
-                            onClick={() => {
-                              handleSidebar();
-                              setMobileBottomsMenu(false);
-                            }}
-                          >
-                            Belts
-                          </button>
-                        </Link>
-                      </div>
+                          Belts
+                        </button>
+                      </Link>
                     </div>
-                  )}
-                  <br></br>
-                  {accountTitleString === "Your Account" ? (
+                  </div>
+                )}
+                <br></br>
+                {accountTitleString === "Your Account" ? (
+                  <Link
+                    className="largeText smushed"
+                    to="/account"
+                    onClick={() => {
+                      handleSidebar();
+                    }}
+                  >
+                    <button
+                      type="button"
+                      style={{
+                        width: "100px",
+                        backgroundColor: styleColors.maroon,
+                        fontSize: "medium",
+                      }}
+                      className="button small pink"
+                    >
+                      Sign In
+                    </button>
+                  </Link>
+                ) : (
+                  <Flexbox flexDirection="column">
                     <Link
                       className="largeText smushed"
                       to="/account"
@@ -1573,275 +1579,254 @@ This app contains the rudiments of an ecommerce app.
                     >
                       <button
                         type="button"
+                        className="buttonsmall"
+                        style={{
+                          minWidth: "100px",
+                          backgroundColor: styleColors.hotPink,
+                          fontSize: "medium",
+                          color: "white",
+                          height: "45px",
+                          marginBottom: "17px",
+                        }}
+                      >
+                        {accountTitleString}
+                      </button>
+                    </Link>
+                    <Link
+                      className="largeText smushed"
+                      to="/favorites"
+                      onClick={() => {
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button small"
                         style={{
                           width: "100px",
                           backgroundColor: styleColors.maroon,
                           fontSize: "medium",
                         }}
-                        className="button small pink"
                       >
-                        Sign In
+                        Favorites
                       </button>
                     </Link>
-                  ) : (
-                    <Flexbox flexDirection="column">
-                      <Link
-                        className="largeText smushed"
-                        to="/account"
-                        onClick={() => {
-                          handleSidebar();
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="buttonsmall"
-                          style={{
-                            minWidth: "100px",
-                            backgroundColor: styleColors.hotPink,
-                            fontSize: "medium",
-                            color: "white",
-                            height: "45px",
-                            marginBottom: "17px",
-                          }}
-                        >
-                          {accountTitleString}
-                        </button>
-                      </Link>
-                      <Link
-                        className="largeText smushed"
-                        to="/favorites"
-                        onClick={() => {
-                          handleSidebar();
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className="button small"
-                          style={{
-                            width: "100px",
-                            backgroundColor: styleColors.maroon,
-                            fontSize: "medium",
-                          }}
-                        >
-                          Favorites
-                        </button>
-                      </Link>
 
-                      <Link
-                        className="largeText smushed"
-                        to="/cart"
-                        onClick={() => {
-                          handleSidebar();
+                    <Link
+                      className="largeText smushed"
+                      to="/cart"
+                      onClick={() => {
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button  small"
+                        style={{
+                          width: "100px",
+                          backgroundColor: styleColors.maroon,
+                          fontSize: "medium",
                         }}
                       >
-                        <button
-                          type="button"
-                          className="button  small"
-                          style={{
-                            width: "100px",
-                            backgroundColor: styleColors.maroon,
-                            fontSize: "medium",
-                          }}
-                        >
-                          Cart
-                        </button>
-                      </Link>
-                      <Link
-                        className="largeText smushed"
-                        to="/my-orders"
-                        onClick={() => {
-                          handleSidebar();
+                        Cart
+                      </button>
+                    </Link>
+                    <Link
+                      className="largeText smushed"
+                      to="/my-orders"
+                      onClick={() => {
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button small"
+                        style={{
+                          width: "100px",
+                          backgroundColor: styleColors.maroon,
+                          fontSize: "medium",
                         }}
                       >
-                        <button
-                          type="button"
-                          className="button small"
-                          style={{
-                            width: "100px",
-                            backgroundColor: styleColors.maroon,
-                            fontSize: "medium",
-                          }}
-                        >
-                          Orders
-                        </button>
-                      </Link>
-                      <Link
-                        className="largeText smushed"
-                        to="/account"
-                        onClick={() => {
-                          handleSignOut();
-                          handleSidebar();
+                        Orders
+                      </button>
+                    </Link>
+                    <Link
+                      className="largeText smushed"
+                      to="/account"
+                      onClick={() => {
+                        handleSignOut();
+                        handleSidebar();
+                      }}
+                    >
+                      <button
+                        type="button"
+                        className="button small"
+                        style={{
+                          width: "100px",
+                          backgroundColor: styleColors.maroon,
+                          fontSize: "medium",
                         }}
                       >
-                        <button
-                          type="button"
-                          className="button small"
-                          style={{
-                            width: "100px",
-                            backgroundColor: styleColors.maroon,
-                            fontSize: "medium",
-                          }}
-                        >
-                          Sign Out
-                        </button>
-                      </Link>
-                    </Flexbox>
-                  )}
-                </Flexbox>
-                <button
-                  style={{
-                    position: "relative",
-                    top: "24vh",
-                    left: "26vw",
-                  }}
-                  onClick={() => {
-                    handleSidebar();
-                  }}
-                  type="button"
-                >
-                  <img
-                    alt="sidebar arrow"
-                    width="32em"
-                    height="auto"
-                    src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
-                  />
-                </button>
+                        Sign Out
+                      </button>
+                    </Link>
+                  </Flexbox>
+                )}
               </Flexbox>
-            </table>
-          </div>
+              <button
+                style={{
+                  position: "relative",
+                  top: "24vh",
+                  left: "26vw",
+                }}
+                onClick={() => {
+                  handleSidebar();
+                }}
+                type="button"
+              >
+                <img
+                  alt="sidebar arrow"
+                  width="32em"
+                  height="auto"
+                  src="https://firebasestorage.googleapis.com/v0/b/jiva-website-405ed.appspot.com/o/left%20arrow%20white.svg?alt=media&token=9f166f00-6ab3-4c6f-b889-64178ab8472a"
+                />
+              </button>
+            </Flexbox>
+          </table>
         </div>
+      </div>
 
-        <div
-          className="functionalModal"
-          id="functionalModal"
+      <div
+        className="functionalModal"
+        id="functionalModal"
+        style={{
+          // top: `${isLargeScreen ? "40vw" : "80vw"}`,
+
+          left: `${isPortrait || isSmallScreen ? "10vw" : "60vw"}`,
+          bottom: `${isPortrait || isSmallScreen ? "5px" : "auto"}`,
+          // marginRight: `${isPortrait || isSmallScreen ? "20px" : ""}`,
+          fontSize: `${isLargeScreen ? "initial" : "small"}`,
+          display: "none",
+          "box-shadow": "0px 0px 5px white",
+        }}
+      >
+        <p
           style={{
-            // top: `${isLargeScreen ? "40vw" : "80vw"}`,
-
-            left: `${isPortrait || isSmallScreen ? "10vw" : "60vw"}`,
-            bottom: `${isPortrait || isSmallScreen ? "5px" : "auto"}`,
-            // marginRight: `${isPortrait || isSmallScreen ? "20px" : ""}`,
-            fontSize: `${isLargeScreen ? "initial" : "small"}`,
-            display: "none",
-            "box-shadow": "0px 0px 5px white",
+            left: `${isLargeScreen ? "initial" : "-5vw"}`,
           }}
         >
-          <p
-            style={{
-              left: `${isLargeScreen ? "initial" : "-5vw"}`,
-            }}
-          >
-            {modalText}
-          </p>
-          <button
-            type="button"
-            className="functionalModalButton button small"
-            id="functionalModalButton"
-            style={{
-              width: "5em",
-              marginRight: "1em",
-              backgroundColor: styleColors.hotPink,
-            }}
-            onClick={() => {
-              // turnOffModal();
-            }}
-          >
-            OK
-          </button>
-          <button
-            type="button"
-            className="functionalModalButton button small"
-            id="functionalModalButton"
-            style={{
-              width: "5em",
-              color: "black",
-              backgroundColor: styleColors.peachPuff,
-            }}
-            onClick={() => {
-              modalExecute();
-              // turnOffModal();
-            }}
-          >
-            Undo
-          </button>
-        </div>
-        <div
-          className="itemOptionsModal"
-          id="itemOptionsModal"
+          {modalText}
+        </p>
+        <button
+          type="button"
+          className="functionalModalButton button small"
+          id="functionalModalButton"
           style={{
-            // top: `${isLargeScreen ? "16.5vw" : "75vw"}`,
-            // left: `${isLargeScreen ? "30vw" : "5vw"}`,
-            right: `${isSmallScreen || isPortrait ? "80vw" : "60vw"}`,
-            fontSize: `${isLargeScreen ? "initial" : "small"}`,
-            display: "none",
-            "box-shadow": "0px 0px 5px white",
+            width: "5em",
+            marginRight: "1em",
+            backgroundColor: styleColors.hotPink,
+          }}
+          onClick={() => {
+            // turnOffModal();
           }}
         >
-          <p
-            style={{
-              left: `${isLargeScreen ? "initial" : "-5vw"}`,
-            }}
-          >
-            {optionsModalText}
-          </p>
+          OK
+        </button>
+        <button
+          type="button"
+          className="functionalModalButton button small"
+          id="functionalModalButton"
+          style={{
+            width: "5em",
+            color: "black",
+            backgroundColor: styleColors.peachPuff,
+          }}
+          onClick={() => {
+            modalExecute();
+            // turnOffModal();
+          }}
+        >
+          Undo
+        </button>
+      </div>
+      <div
+        className="itemOptionsModal"
+        id="itemOptionsModal"
+        style={{
+          // top: `${isLargeScreen ? "16.5vw" : "75vw"}`,
+          // left: `${isLargeScreen ? "30vw" : "5vw"}`,
+          right: `${isSmallScreen || isPortrait ? "80vw" : "60vw"}`,
+          fontSize: `${isLargeScreen ? "initial" : "small"}`,
+          display: "none",
+          "box-shadow": "0px 0px 5px white",
+        }}
+      >
+        <p
+          style={{
+            left: `${isLargeScreen ? "initial" : "-5vw"}`,
+          }}
+        >
+          {optionsModalText}
+        </p>
+        <button
+          type="button"
+          className="itemOptionsModalButton button small"
+          id="itemOptionsModalButton"
+          style={{ backgroundColor: styleColors.hotPink }}
+          onClick={() => closeOptionsModal()}
+        >
+          OK
+        </button>
+      </div>
+      <div
+        className="itemOptionsModal"
+        id="expressModal"
+        style={{
+          top: `${isLargeScreen ? "16.5vw" : "50vw"}`,
+          left: `${isLargeScreen ? "30vw" : "5vw"}`,
+          fontSize: `${isLargeScreen ? "initial" : "small"}`,
+          display: "none",
+          "box-shadow": "0px 0px 5px white",
+        }}
+      >
+        <p
+          style={{
+            left: `${isLargeScreen ? "initial" : "-5vw"}`,
+          }}
+        >
+          Sign in to use Express Checkout
+        </p>
+        <Link to="/account">
           <button
             type="button"
             className="itemOptionsModalButton button small"
-            id="itemOptionsModalButton"
             style={{ backgroundColor: styleColors.hotPink }}
-            onClick={() => closeOptionsModal()}
-          >
-            OK
-          </button>
-        </div>
-        <div
-          className="itemOptionsModal"
-          id="expressModal"
-          style={{
-            top: `${isLargeScreen ? "16.5vw" : "50vw"}`,
-            left: `${isLargeScreen ? "30vw" : "5vw"}`,
-            fontSize: `${isLargeScreen ? "initial" : "small"}`,
-            display: "none",
-            "box-shadow": "0px 0px 5px white",
-          }}
-        >
-          <p
-            style={{
-              left: `${isLargeScreen ? "initial" : "-5vw"}`,
-            }}
-          >
-            Sign in to use Express Checkout
-          </p>
-          <Link to="/account">
-            <button
-              type="button"
-              className="itemOptionsModalButton button small"
-              style={{ backgroundColor: styleColors.hotPink }}
-              id="expressModalYes"
-              onClick={() => closeExpressModal()}
-            >
-              Sign In
-            </button>
-          </Link>
-          <button
-            type="button"
-            className="itemOptionsModalButton button small"
-            id="expressModalNo"
+            id="expressModalYes"
             onClick={() => closeExpressModal()}
-            style={{ backgroundColor: styleColors.peachPuff, color: "black" }}
           >
-            No Thanks
+            Sign In
           </button>
-        </div>
-        <div
-          className="itemOptionsModal"
-          id="checkoutModal"
-          style={{
-            display: "none",
-            "box-shadow": "0px 0px 5px white",
-          }}
+        </Link>
+        <button
+          type="button"
+          className="itemOptionsModalButton button small"
+          id="expressModalNo"
+          onClick={() => closeExpressModal()}
+          style={{ backgroundColor: styleColors.peachPuff, color: "black" }}
         >
-          {/* <h3>Leave checkout and return to {navString}?</h3> */}
-          {/* <Link to={`/${navString}`}>
+          No Thanks
+        </button>
+      </div>
+      <div
+        className="itemOptionsModal"
+        id="checkoutModal"
+        style={{
+          display: "none",
+          "box-shadow": "0px 0px 5px white",
+        }}
+      >
+        {/* <h3>Leave checkout and return to {navString}?</h3> */}
+        {/* <Link to={`/${navString}`}>
           <button
             type="button"
             style={{ backgroundColor: styleColors.hotPink }}
@@ -1855,29 +1840,29 @@ This app contains the rudiments of an ecommerce app.
           </button>
         </Link> */}
 
-          <button
-            type="button"
-            className="itemOptionsModalButton button small"
-            style={{ backgroundColor: styleColors.peachPuff, color: "black" }}
-            id="checkoutModalButtonNo"
-            onClick={() => {
-              // setLeaveCheckoutModal(false);
-            }}
-          >
-            No
-          </button>
-        </div>
+        <button
+          type="button"
+          className="itemOptionsModalButton button small"
+          style={{ backgroundColor: styleColors.peachPuff, color: "black" }}
+          id="checkoutModalButtonNo"
+          onClick={() => {
+            // setLeaveCheckoutModal(false);
+          }}
+        >
+          No
+        </button>
+      </div>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          {/* <Route path="/express-checkout">
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        {/* <Route path="/express-checkout">
           <Elements stripe={stripePromise}>
             <ExpressCheckout />
           </Elements>
         </Route> */}
-          {/* {allArtisans.map((artisan) => {
+        {/* {allArtisans.map((artisan) => {
           let artisanPageLinkString = artisan[0].split(" ").join("-");
           return (
             <Route path={`/product/${artisanPageLinkString}`}>
@@ -1885,22 +1870,22 @@ This app contains the rudiments of an ecommerce app.
             </Route>
           );
         })} */}
-          <Route path="/about">
-            <About />
-          </Route>
-          {/* <Route path="/cart">
+        <Route path="/about">
+          <About />
+        </Route>
+        {/* <Route path="/cart">
           <Cart />
         </Route>
         <Route path="cart-sign-in">
           <CartSignIn />
         </Route> */}
-          <Route path="/account">
-            <Account />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          {/* <Route path="/sign-in-successful">
+        <Route path="/account">
+          <Account />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
+        {/* <Route path="/sign-in-successful">
           <SignInSuccessful />
         </Route>
         <Route path="/privacy-policy">
@@ -1912,25 +1897,25 @@ This app contains the rudiments of an ecommerce app.
         <Route path="/sign-in-success-email">
           <SignInSuccessEmail />
         </Route> */}
-          {/* <Route path="/sign-in-with-email">
+        {/* <Route path="/sign-in-with-email">
           <SignInWithEmail />
         </Route> */}
-          <Route path="/order-success">
-            <OrderSuccess />
-          </Route>
-          <Route path="/my-orders">
-            <MyOrders />
-          </Route>
-          <Route path="/favorites">
-            <Favorites />
-          </Route>
-          {/* <Route path="/return-policy">
+        <Route path="/order-success">
+          <OrderSuccess />
+        </Route>
+        <Route path="/my-orders">
+          <MyOrders />
+        </Route>
+        <Route path="/favorites">
+          <Favorites />
+        </Route>
+        {/* <Route path="/return-policy">
           <ReturnPolicy />
         </Route> */}
-        </Switch>
+      </Switch>
 
-        <div>
-          {/* {termsDisplay && (
+      <div>
+        {/* {termsDisplay && (
           <div
             style={{
               marginTop: `${isPortrait || isSmallScreen ? "" : "80px"}`,
@@ -1940,11 +1925,10 @@ This app contains the rudiments of an ecommerce app.
             <RecentlyViewed />
           </div>
         )} */}
-        </div>
-        <br></br>
-        <Footer />
-        {/* <button onClick={signIn}>Sign in with Facebook</button> */}
-      </Authenticator>
+      </div>
+      <br></br>
+      <Footer />
+      {/* <button onClick={signIn}>Sign in with Facebook</button> */}
     </div>
   );
 }

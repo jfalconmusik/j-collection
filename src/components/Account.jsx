@@ -2,6 +2,15 @@ import React from "react";
 import { Context } from "../Context";
 import fb from "fb";
 import { AmplifyAuthenticator } from "@aws-amplify/ui-react";
+import Amplify, {
+  Analytics,
+  Storage,
+  API,
+  graphqlOperation,
+  Auth,
+  Hub,
+} from "aws-amplify";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 const Account = () => {
   // function checkLoginState() {
@@ -38,6 +47,18 @@ const Account = () => {
         data-logo_alignment="left"
       ></div> */}
       <AmplifyAuthenticator federated={federated}></AmplifyAuthenticator>
+      <AmplifySignOut />
+
+      <button onClick={() => Auth.federatedSignIn({ provider: "Facebook" })}>
+        Open Facebook
+      </button>
+      <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
+        Open Google
+      </button>
+      <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
+      <button onClick={() => Auth.signOut()}>
+        {/* Sign Out {user.getUsername()} */}
+      </button>
     </div>
   );
 };
