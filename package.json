@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/analytics": "^3.3.11",
     "@aws-amplify/auth": "^3.4.34",
     "@aws-amplify/core": "^3.8.24",
     "@aws-amplify/interactions": "^3.3.34",

@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aws-amplify/analytics@3.x.x":
+"@aws-amplify/analytics@^3.3.11", "@aws-amplify/analytics@3.x.x":
   "integrity" "sha512-NruWHuW+cb1L8eslbHTuqY+Rorcap1yDutDbf9Dmfj4zkZAFc02sYKLKnpZEMA+I5hlyqYrSSh4MRIw1OSD3PA=="
   "resolved" "https://registry.npmjs.org/@aws-amplify/analytics/-/analytics-3.3.11.tgz"
   "version" "3.3.11"
