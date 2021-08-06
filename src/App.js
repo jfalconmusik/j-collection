@@ -12,7 +12,7 @@ import Amplify, {
   graphqlOperation,
 } from "aws-amplify";
 import { withAuthenticator, S3Album } from "aws-amplify-react";
-import aws_exports from "../aws-exports";
+import { awsmobile as aws_exports } from "./aws-exports.js";
 import About from "./components/About.jsx";
 import Header from "./components/Header.jsx";
 import Contact from "./components/Contact.jsx";
