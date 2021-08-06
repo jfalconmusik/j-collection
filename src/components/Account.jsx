@@ -15,7 +15,7 @@ const Account = () => {
         scope="public_profile,email"
         onlogin="checkLoginState();"
       ></fb:login-button> */}
-      <div
+      {/* <div
         id="g_id_onload"
         data-client_id="35357744009-tgq"
         data-login_uri="https://jcollection/sign-in/"
@@ -29,7 +29,7 @@ const Account = () => {
         data-text="sign_in_with"
         data-shape="rectangular"
         data-logo_alignment="left"
-      ></div>
+      ></div> */}
     </div>
   );
 };

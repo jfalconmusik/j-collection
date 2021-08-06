@@ -50,12 +50,13 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 
-       {% comment %} FB.getLoginStatus(function (response) {
+      FB.getLoginStatus(function (response) {
               statusChangeCallback(response);
             });
-          }; {% endcomment %}
+          };
     </script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

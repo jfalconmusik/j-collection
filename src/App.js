@@ -10,8 +10,19 @@ import Amplify, {
   Storage,
   API,
   graphqlOperation,
+  Auth,
+  Hub,
 } from "aws-amplify";
-import { withAuthenticator, S3Album } from "aws-amplify-react";
+import {
+  // withAuthenticator,
+  S3Album,
+  Authenticator,
+  SignIn,
+  SignUp,
+  ConfirmSignUp,
+  Greetings,
+} from "aws-amplify-react";
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 // import { awsmobile as aws_exports } from "./aws-exports.js";
 import About from "./components/About.jsx";
 import Header from "./components/Header.jsx";
@@ -197,9 +208,60 @@ This app contains the rudiments of an ecommerce app.
     });
   };
 
+  const [user, setUser] = useState({});
+
   useEffect(() => {
     Analytics.record("Amplify_CLI");
+    Hub.listen("auth", ({ payload: { event, data } }) => {
+      switch (event) {
+        case "signIn":
+          this.setState({ user: data });
+          break;
+        case "signOut":
+          this.setState({ user: null });
+          break;
+        case "customOAuthState":
+          this.setState({ customState: data });
+      }
+    });
+
+    Auth.currentAuthenticatedUser()
+      .then((user) => setUserInfo(user))
+      .catch(() => console.log("Not signed in"));
   }, []);
+
+  async function signUp() {
+    try {
+      const { user } = await Auth.signUp({
+        // username,
+        // password,
+        // attributes: {
+        //     email,          // optional
+        //     phone_number,   // optional - E.164 number convention
+        // other custom attributes
+        // }
+      });
+      console.log(user);
+    } catch (error) {
+      console.log("error signing up:", error);
+    }
+  }
+
+  // async function signIn() {
+  //   try {
+  //       const user = await Auth.signIn(username = "username", password = "password");
+  //   } catch (error) {
+  //       console.log('error signing in', error);
+  //   }
+  // }
+
+  async function signOut() {
+    try {
+      await Auth.signOut();
+    } catch (error) {
+      console.log("error signing out: ", error);
+    }
+  }
 
   const [selected, setSelected] = useState([]);
 
@@ -556,6 +618,18 @@ This app contains the rudiments of an ecommerce app.
 
   return (
     <div className="App">
+      <AmplifySignOut />
+
+      <button onClick={() => Auth.federatedSignIn({ provider: "Facebook" })}>
+        Open Facebook
+      </button>
+      <button onClick={() => Auth.federatedSignIn({ provider: "Google" })}>
+        Open Google
+      </button>
+      <button onClick={() => Auth.federatedSignIn()}>Open Hosted UI</button>
+      <button onClick={() => Auth.signOut()}>
+        Sign Out {user.getUsername()}
+      </button>
       <header
         style={{
           "max-height": "8em",
@@ -1715,3 +1789,4 @@ This app contains the rudiments of an ecommerce app.
 }
 
 export default withAuthenticator(App, true);
+// export default App;
