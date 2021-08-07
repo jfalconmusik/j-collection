@@ -1006,8 +1006,8 @@ This app contains the rudiments of an ecommerce app.
             style={{
               position: "relative",
               // "max-height": "3.5em",
-              height: "300px",
-              bottom: "275px",
+              height: "280px",
+              bottom: "295px",
               backgroundColor: "white",
               zIndex: "90",
             }}
