@@ -1040,6 +1040,7 @@ This app contains the rudiments of an ecommerce app.
                     padding: "30px",
                     paddingBottom: "15px",
                     textDecoration: "none",
+                    zIndex: "99",
                   }}
                   to="/"
                 >
@@ -1063,6 +1064,7 @@ This app contains the rudiments of an ecommerce app.
                     paddingBottom: "15px",
                     textDecoration: "none",
                     color: `${onBrowse ? styleColors.maroon : "black"}`,
+                    zIndex: "99",
                   }}
                   to="/shop"
                   className="show-for-large"
@@ -1090,6 +1092,7 @@ This app contains the rudiments of an ecommerce app.
                     paddingBottom: "15px",
                     textDecoration: "none",
                     color: `${onAccount ? styleColors.maroon : "black"}`,
+                    zIndex: "99",
                   }}
                   to="/account"
                 >
