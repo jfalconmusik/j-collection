@@ -1386,7 +1386,7 @@ This app contains the rudiments of an ecommerce app.
                           backgroundColor: styleColors.hotPink,
                         }}
                       >
-                        Shop All
+                        Shop
                       </button>
                     </Link>
                     <Link
