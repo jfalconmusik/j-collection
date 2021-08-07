@@ -1070,7 +1070,7 @@ This app contains the rudiments of an ecommerce app.
                     pointerEvents: "all",
                   }}
                   to="/shop"
-                  className="show-for-large"
+                  // className="show-for-large"
                   id="shopId"
                 >
                   Browse
