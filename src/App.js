@@ -944,9 +944,7 @@ This app contains the rudiments of an ecommerce app.
                         //     searchArray
                         //   );
                         // }}
-                        placeholder={`Search ${
-                          searchString ? searchString : "Domestics near you"
-                        }...`}
+                        placeholder={``}
                       ></input>
                     </Link>
                   ) : (
