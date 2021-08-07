@@ -821,7 +821,7 @@ This app contains the rudiments of an ecommerce app.
               maxWidth: "100vw",
               bottom: "-275px",
               position: "relative",
-              zIndex: "99",
+              zIndex: "98",
             }}
             className="title-bar-title show-for-large"
           >
