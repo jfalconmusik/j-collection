@@ -1006,8 +1006,8 @@ This app contains the rudiments of an ecommerce app.
             style={{
               position: "relative",
               // "max-height": "3.5em",
-              height: "280px",
-              bottom: "295px",
+              height: "260px",
+              bottom: "315px",
               backgroundColor: "white",
               zIndex: "90",
             }}
@@ -1032,7 +1032,7 @@ This app contains the rudiments of an ecommerce app.
                     height: "100px",
                     left: "500px",
                     top: "180px",
-                    bottom: "0px",
+                    bottom: "20px",
                     "overflow-x": "hidden",
                     // visibility: `${listItemDisplay}`,
                     "font-size": "xx-large",
@@ -1041,6 +1041,7 @@ This app contains the rudiments of an ecommerce app.
                     paddingBottom: "15px",
                     textDecoration: "none",
                     zIndex: "99",
+                    pointerEvents: "all",
                   }}
                   to="/"
                 >
@@ -1055,7 +1056,7 @@ This app contains the rudiments of an ecommerce app.
                     height: "300px",
                     left: "800px",
                     top: "180px",
-                    bottom: "0px",
+                    bottom: "20px",
                     "overflow-x": "hidden",
                     // visibility: `${listItemDisplay}`,
                     "font-size": "xx-large",
@@ -1065,6 +1066,7 @@ This app contains the rudiments of an ecommerce app.
                     textDecoration: "none",
                     color: `${onBrowse ? styleColors.maroon : "black"}`,
                     zIndex: "99",
+                    pointerEvents: "all",
                   }}
                   to="/shop"
                   className="show-for-large"
@@ -1083,7 +1085,7 @@ This app contains the rudiments of an ecommerce app.
                     height: "100px",
                     left: "1100px",
                     top: "180px",
-                    bottom: "0px",
+                    bottom: "20px",
                     "overflow-x": "hidden",
                     // visibility: `${listItemDisplay}`,
                     "font-size": "xx-large",
@@ -1093,6 +1095,7 @@ This app contains the rudiments of an ecommerce app.
                     textDecoration: "none",
                     color: `${onAccount ? styleColors.maroon : "black"}`,
                     zIndex: "99",
+                    pointerEvents: "all",
                   }}
                   to="/account"
                 >
