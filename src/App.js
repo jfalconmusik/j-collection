@@ -1017,8 +1017,9 @@ This app contains the rudiments of an ecommerce app.
               style={{
                 right: "4em",
                 justifyContent: "space-between",
+                flexDirection: "column",
                 maxWidth: "100vw",
-                display: "inline-block",
+                display: "flex",
                 textDecoration: "none",
               }}
               onMouseOver={() => setShowMenuShop(true)}
@@ -1029,8 +1030,8 @@ This app contains the rudiments of an ecommerce app.
                   style={{
                     color: `${onHomeScreen ? styleColors.maroon : "black"}`,
                     // float: "left",
-                    height: "100px",
-                    left: "500px",
+                    // height: "100px",
+                    // left: "500px",
                     top: "180px",
                     bottom: "30px",
                     "overflow-x": "hidden",
@@ -1053,8 +1054,8 @@ This app contains the rudiments of an ecommerce app.
                   onClick={() => setOnBrowse(true)}
                   style={{
                     // float: "left",
-                    height: "300px",
-                    left: "800px",
+                    // height: "300px",
+                    // left: "800px",
                     top: "180px",
                     bottom: "30px",
                     "overflow-x": "hidden",
@@ -1082,8 +1083,8 @@ This app contains the rudiments of an ecommerce app.
                   onClick={() => setOnAccount(true)}
                   style={{
                     // float: "left",
-                    height: "100px",
-                    left: "1100px",
+                    // height: "100px",
+                    // left: "1100px",
                     top: "180px",
                     bottom: "30px",
                     "overflow-x": "hidden",
