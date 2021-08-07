@@ -1107,7 +1107,7 @@ This app contains the rudiments of an ecommerce app.
                 display: "flex",
                 justifyContent: "space-between",
                 width: "130px",
-                bottom: "-115px",
+                bottom: "-90px",
                 zIndex: "99",
               }}
             >
@@ -1177,7 +1177,7 @@ This app contains the rudiments of an ecommerce app.
                         display: "inline-block",
                         // right: "15%",
                         position: "relative",
-                        bottom: "-50px",
+                        bottom: "-15px",
                         outline: "none",
                         border: "none",
                         right: "700px",
