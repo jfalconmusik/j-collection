@@ -1,0 +1,95 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "agents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availableForWork",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skills.cooking",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "payRate.fullDay",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "agents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availableForWork",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skills.extraSkills",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "payRate.fullDay",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "agents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availableForWork",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skills.gardening",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "payRate.fullDay",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "agents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availableForWork",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skills.housekeeping",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "payRate.fullDay",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "agents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availableForWork",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skills.laundry",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "payRate.fullDay",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

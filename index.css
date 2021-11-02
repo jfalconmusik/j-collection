@@ -1,0 +1,396 @@
+body {
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
+}
+
+code { 
+    font-family:source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
+}
+
+h1 {
+    margin-top:500px;
+    margin-bottom:500px
+}
+
+.logo {
+    margin:none auto;
+    padding:0 none;
+    position:relative;
+    z-index:99
+}
+
+.spacer {
+    height:200px
+}
+
+#header {
+    max-width:100vw;
+    position:sticky;
+    top:-100px;
+    display:flex;
+    z-index:99;
+    max-height:20vh
+}
+
+.row {
+    display:flex;
+    flex-direction:row
+}
+
+.column {
+    display:flex;
+    flex-direction:column
+}
+
+.headerItem { 
+    margin:10vw
+}
+
+.socialIcon {
+    margin:.5vw;
+    z-index:99
+}
+
+@-webkit-keyframes shimmer { 
+    0% { 
+        background-color:#f5f5f5;
+        box-shadow:0 0 5px #dfe0e0
+    } 
+    
+    50% {
+        background-color:#e0bbd8;
+        box-shadow:0 0 17px #996a9b
+    } 
+    to { 
+        background-color:#dfdfdf;
+        box-shadow:0 0 10px #dfe0e0
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-color:#f5f5f5;
+        box-shadow:0 0 5px #dfe0e0
+    }
+    
+    50% { 
+        background-color:#e0bbd8;
+        box-shadow:0 0 17px #996a9b
+    }
+    to {
+        background-color:#dfdfdf;
+        box-shadow:0 0 10px #dfe0e0
+    }
+}
+
+.shimmerText {
+    -webkit-animation:none;
+    animation:none
+}
+.shimmerText:hover { 
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:25px;
+    -webkit-animation:shimmer 3s infinite;
+    animation:shimmer 3s infinite;
+}
+
+.signIn {
+    border:none;
+    border-radius:4px;
+    margin:5px 0;
+    opacity:.85;
+    display:inline-block;
+    font-size:15px;
+    line-height:17px;
+    text-decoration:none;
+    height:40px
+}
+
+.email {
+    color:#fff;
+    background-color:tomato
+}
+
+.google {
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c
+}
+
+.facebook {
+    color:#fff;
+    background-color:#217ef8
+}
+
+.modalClass {
+    top:6vw;
+    left:6vw;
+    right:auto;
+    bottom:auto;
+    margin-right:0;
+    position:fixed;
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c;
+    width:8em;
+    text-align:center;
+    text-decoration:none;
+    z-index:99
+}
+
+.modalButton { 
+    background-color:#333;
+    color:#fff;
+    font-size:large;
+    width:3em
+}
+
+.modalEdge {
+    top:90vh;
+    left:60vw;
+    position:fixed;
+    width:20em;
+    font-size:larger
+}
+
+.modalEdge {
+    right:auto;
+    bottom:auto;
+    margin-right:0;
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c;
+    text-align:center;
+    text-decoration:none;
+    z-index:99
+}
+
+.dropdownModal { 
+    position:sticky;
+    max-width:250px;
+    max-height:14em
+}
+
+.modalOverlay { 
+    background-color:transparent
+}
+
+.modalEdgeButton {
+    background-color:#333;
+    color:#fff;
+    font-size:large;
+    width:3em
+}
+
+.modalCenter {
+    left:40vw;
+    right:60vw;
+    bottom:auto;
+    margin:0 auto;
+    position:fixed;
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c;
+    width:20em;
+    font-size:larger;
+    text-align:center;
+    text-decoration:none;
+    z-index:99
+}
+
+.slideIn { 
+    position:relative;
+    left:-300px;
+    -webkit-animation:slideIn .7s;
+    animation:slideIn .7s
+}
+
+@-webkit-keyframes slideIn {
+    0% { 
+        left:-300px
+    } 
+    to { 
+        left:0
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        left:-300px
+    }
+    to {
+        left:0
+    }
+}
+
+.slideOut {
+    position:relative;
+    left:0;
+    -webkit-animation:slideOut .7s;
+    animation:slideOut .7s
+}
+
+@-webkit-keyframes slideOut {
+     0% { 
+         left:0
+    }
+    to { 
+        left:-300px
+    }
+}
+
+@keyframes slideOut {
+    0%{ 
+        left:0
+    }
+    to {
+        left:-300px
+    }
+}
+
+.modalCenterButton {
+    font-size:large;
+    width:3em
+}
+
+.lottie {
+    margin:0 auto;
+    position:relative
+}
+
+#agentSignUp {
+    margin:0 auto;
+    position:relative;
+    max-width:80vw;
+    min-height:80vh;
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c
+}
+
+#map { 
+    height:300px;
+    width:300px;
+    margin:0 auto
+}
+
+.tooltip { 
+    position:relative;
+    display:inline-block;
+    border-bottom:1px dotted #000
+} 
+.tooltip .tooltiptext {
+    visibility:hidden;
+    width:250px;
+    background-color:#000;
+    color:#fff;
+    text-align:center;
+    padding:5px 0;
+    border-radius:6px;
+    position:absolute;
+    z-index:1
+}
+
+.tooltip:hover .tooltiptext { 
+    visibility:visible
+}
+
+.innerBox {
+    background-color:#fff;
+    max-width:50vw
+}
+
+.footer {
+    display:flex;
+    justify-content:center;
+    flex-direction:row;
+    box-shadow:1px -1px #9c9c9c;
+    max-height:150px
+}
+.footer {
+    text-decoration:none
+}
+
+.footItem {
+    text-decoration:none;
+    color:#000;
+}
+
+.footItem {
+    color:rgb(138, 126, 126)
+}
+
+.footItem:hover {
+    color:#ff69b4
+}
+
+.Browse {
+    width:90vw;
+    margin:0 auto;
+    position:relative;
+    color:#000;
+    background-color:#f8f8f8;
+    box-shadow:1px 1px #9c9c9c
+}
+
+body {
+    overflow-x:hidden;
+    max-width:100vw;
+    width:100vw
+}
+
+.App {
+    text-align:center
+}
+
+.App-logo {
+    height:40vmin;
+    pointer-events:none
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    .App-logo {
+        -webkit-animation:App-logo-spin 20s linear infinite;
+        animation:App-logo-spin 20s linear infinite
+    }
+}
+
+.App-header { 
+    background-color:#282c34;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-size:calc(10px + 2vmin);
+    color:#fff
+}
+
+.App-link {
+    color:#61dafb
+}
+
+@-webkit-keyframes App-logo-spin {
+    0% {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    to { 
+        -webkit-transform:rotate(1turn);
+        transform:rotate(1turn)
+    }
+}
+
+@keyframes App-logo-spin { 
+    0% {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    to {
+        -webkit-transform:rotate(1turn);
+        transform:rotate(1turn)
+    }
+}
+
